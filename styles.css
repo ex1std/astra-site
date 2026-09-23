@@ -106,6 +106,36 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5.2vw, 5.2rem); line-height: 1.02; lett
 .service-card-featured li { border-color: rgba(255,255,255,.26); }
 .service-card > a { width: fit-content; font-weight: 700; border-bottom: 1px solid currentColor; }
 
+.prices { background: var(--paper); }
+.price-block { display: grid; grid-template-columns: 0.5fr 1.5fr; gap: clamp(2rem, 6vw, 6rem); padding: 3rem 0; border-top: 1px solid var(--line); }
+.price-block-heading { display: flex; align-items: flex-start; gap: 1.25rem; }
+.price-block-heading > span { margin-top: 0.5rem; color: var(--red); font-size: 0.78rem; }
+.price-block-heading h3 { margin: 0; font-size: clamp(1.75rem, 3vw, 2.7rem); line-height: 1.08; letter-spacing: -0.035em; }
+.price-list { border-top: 1px solid var(--ink); }
+.price-item { border-bottom: 1px solid var(--line); }
+.price-item summary { position: relative; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; padding: 1.3rem 2.5rem 1.3rem 0; cursor: pointer; list-style: none; }
+.price-item summary::-webkit-details-marker { display: none; }
+.price-item summary::after { content: "+"; position: absolute; right: 0; color: var(--red); font-size: 1.5rem; font-weight: 400; transition: transform 200ms ease; }
+.price-item[open] summary::after { transform: rotate(45deg); }
+.price-item summary span { font-size: 1.05rem; font-weight: 600; }
+.price-item summary strong { white-space: nowrap; font-size: 1rem; }
+.price-item ul { max-width: 720px; margin: 0; padding: 0 0 1.5rem 1.1rem; color: #62625f; }
+.price-item li + li { margin-top: 0.35rem; }
+.legal-price-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.legal-price-card { padding: 1.6rem; border: 1px solid var(--line); border-radius: 1.25rem; background: var(--white); }
+.legal-price-card h4 { margin: 0 0 1.2rem; font-size: 1.3rem; line-height: 1.2; }
+.legal-price-card dl { margin: 0; }
+.legal-price-card dl > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; padding: 0.72rem 0; border-top: 1px solid var(--line); }
+.legal-price-card dt { color: #565653; }
+.legal-price-card dd { margin: 0; white-space: nowrap; font-weight: 700; }
+.legal-price-card-accent { color: var(--white); background: var(--ink); border-color: var(--ink); }
+.legal-price-card-accent dt { color: #b8b8b4; }
+.legal-price-card-accent dl > div { border-color: #3b3b3b; }
+.price-footnote { margin: 1rem 0 0; color: #777773; font-size: 0.8rem; }
+.price-cta { margin-top: 2.5rem; padding: 2rem 0; display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.price-cta p { margin: 0; font-size: clamp(1.3rem, 2.5vw, 2rem); font-weight: 600; letter-spacing: -0.025em; }
+.prices-disclaimer { margin: 1rem 0 0; color: #777773; font-size: 0.8rem; }
+
 .approach { color: var(--white); background: var(--ink); }
 .approach-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(4rem, 10vw, 10rem); }
 .approach-intro { position: sticky; top: 130px; height: fit-content; }
@@ -156,6 +186,7 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5.2vw, 5.2rem); line-height: 1.02; lett
   .section-heading > p:last-child { grid-column: 2; }
   .service-grid { grid-template-columns: 1fr; }
   .service-card { min-height: auto; gap: 3rem; }
+  .price-block { grid-template-columns: 1fr; }
   .approach-grid, .about-grid { gap: 4rem; }
 }
 
@@ -180,6 +211,12 @@ h2 { margin: 0; font-size: clamp(2.5rem, 5.2vw, 5.2rem); line-height: 1.02; lett
   .section-heading { display: block; }
   .section-heading h2 { margin-bottom: 1.5rem; }
   .service-card { padding: 1.5rem; border-radius: 1.4rem; }
+  .price-block { padding: 2.25rem 0; }
+  .legal-price-grid { grid-template-columns: 1fr; }
+  .price-item summary { gap: 1rem; padding-right: 1.8rem; }
+  .price-item summary strong { font-size: 0.9rem; }
+  .legal-price-card dl > div { grid-template-columns: 1fr; gap: 0.2rem; }
+  .price-cta { align-items: flex-start; flex-direction: column; }
   .approach-grid, .about-grid, .contact-card, .footer-grid { grid-template-columns: 1fr; }
   .approach-intro { position: static; }
   .steps li { grid-template-columns: 45px 1fr; gap: 0.8rem; }
